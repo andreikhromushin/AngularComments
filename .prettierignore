@@ -1,0 +1,30 @@
+# Add files here to ignore them from prettier formatting
+
+# Dependencies
+node_modules
+
+# Build outputs
+/dist
+/coverage
+/tmp
+/out-tsc
+/.angular
+
+# Generated files
+*.d.ts
+!src/**/*.d.ts
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Minified files
+*.min.js
+*.min.css
+*.bundle.js
+
+# Environment files
+.env
+.env.local
+.env*.local
