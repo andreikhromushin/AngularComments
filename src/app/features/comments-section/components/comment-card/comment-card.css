@@ -6,10 +6,10 @@
   display: grid;
   grid-template-columns: 40px 1fr;
   gap: 14px;
-  background: var(--glass-bg);
+  background: var(--card-bg, var(--glass-bg));
   border: 1px solid var(--glass-border);
-  backdrop-filter: var(--glass-filter);
-  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--card-filter, var(--glass-filter));
+  -webkit-backdrop-filter: var(--card-filter, var(--glass-filter));
   border-radius: 16px;
   padding: 16px 18px;
   box-shadow: var(--glass-shadow);
