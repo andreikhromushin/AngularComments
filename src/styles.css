@@ -11,6 +11,7 @@
   --glass-filter: blur(14px);
   --glass-bg: rgba(28, 22, 48, 0.55);
   --glass-bg-strong: rgba(28, 22, 48, 0.7);
+  --card-bg: rgba(28, 22, 48, 0.7);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-border-strong: rgba(255, 255, 255, 0.2);
   --glass-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
@@ -48,6 +49,7 @@
   --glass-filter: blur(10px);
   --glass-bg: rgba(255, 255, 255, 0.55);
   --glass-bg-strong: rgba(255, 255, 255, 0.75);
+  --card-bg: rgba(255, 255, 255, 0.5);
   --glass-border: rgba(255, 255, 255, 0.85);
   --glass-border-strong: rgba(124, 92, 220, 0.32);
   --glass-shadow: 0 6px 18px rgba(124, 92, 220, 0.14);
