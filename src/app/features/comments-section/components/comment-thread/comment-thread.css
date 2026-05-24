@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.children {
+  list-style: none;
+  margin: 0;
+  margin-left: 18px;
+  padding: 0;
+  padding-left: 22px;
+  border-left: 1px solid var(--thread-line);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

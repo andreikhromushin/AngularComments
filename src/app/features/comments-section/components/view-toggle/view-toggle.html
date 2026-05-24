@@ -1,0 +1,30 @@
+<div class="segmented" role="tablist" aria-label="Comment view mode">
+  <button
+    type="button"
+    role="tab"
+    class="seg"
+    [class.active]="mode() === 'tree'"
+    [attr.aria-selected]="mode() === 'tree'"
+    (click)="select('tree')"
+  >
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 4v16m0-8h6m0 0V8m0 4v4m6-12v8m0 0h-6m6 0v8" stroke-linecap="round" />
+    </svg>
+    <span>Tree</span>
+  </button>
+  <button
+    type="button"
+    role="tab"
+    class="seg"
+    [class.active]="mode() === 'flat'"
+    [attr.aria-selected]="mode() === 'flat'"
+    (click)="select('flat')"
+  >
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round" />
+      <line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round" />
+      <line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round" />
+    </svg>
+    <span>Flat</span>
+  </button>
+</div>

@@ -1,0 +1,22 @@
+<ul class="list" role="list">
+  @for (comment of comments(); track comment.id) {
+    <li class="item">
+      <app-comment-card
+        [comment]="comment"
+        [isReplying]="replyingTo() === comment.id"
+        (replyToggled)="replyToggled.emit($event)"
+      />
+      @if (replyingTo() === comment.id) {
+        <div class="composer-slot" [id]="'composer-' + comment.id">
+          <app-comment-composer
+            mode="reply"
+            [replyTo]="comment.author"
+            [autoFocus]="true"
+            (submitted)="onReplySubmit(comment, $event)"
+            (cancelled)="replyCancelled.emit()"
+          />
+        </div>
+      }
+    </li>
+  }
+</ul>

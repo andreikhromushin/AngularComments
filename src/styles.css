@@ -1,1 +1,152 @@
-/* You can add global styles to this file, and also import other style files */
+:root,
+:root[data-theme="dark"] {
+  --surface: #0a0612;
+
+  --blob-color-a: #7b61ff;
+  --blob-color-b: #40d5ff;
+  --blob-color-c: #ff58a8;
+  --blob-opacity: 0.6;
+  --blob-blur: 60px;
+
+  --glass-filter: blur(14px);
+  --glass-bg: rgba(28, 22, 48, 0.55);
+  --glass-bg-strong: rgba(28, 22, 48, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-strong: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
+  --hover-bg: rgba(255, 255, 255, 0.06);
+
+  --text-strong: #ffffff;
+  --text-body: rgba(236, 232, 255, 0.92);
+  --text-muted: rgba(236, 232, 255, 0.62);
+  --text-faint: rgba(236, 232, 255, 0.42);
+
+  --accent: #a8c1ff;
+  --accent-soft: rgba(123, 97, 255, 0.45);
+  --accent-gradient: linear-gradient(120deg, #7b61ff, #40d5ff);
+  --accent-glow: 0 10px 28px rgba(123, 97, 255, 0.5);
+  --accent-glow-soft: 0 8px 22px rgba(123, 97, 255, 0.22);
+
+  --like-color: #ff6b88;
+  --like-glow: 0 0 18px rgba(255, 107, 136, 0.45);
+
+  --title-gradient: linear-gradient(120deg, #ffffff 0%, #c8b8ff 55%, #8fd9ff 100%);
+  --thread-line: rgba(123, 97, 255, 0.28);
+
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --surface: #f5f1ff;
+
+  --blob-color-a: #a98bff;
+  --blob-color-b: #ff9bc2;
+  --blob-color-c: #7ddec0;
+  --blob-opacity: 0.9;
+  --blob-blur: 60px;
+
+  --glass-filter: blur(10px);
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-border-strong: rgba(124, 92, 220, 0.32);
+  --glass-shadow: 0 6px 18px rgba(124, 92, 220, 0.14);
+  --hover-bg: rgba(28, 24, 48, 0.05);
+
+  --text-strong: #1c1830;
+  --text-body: #2e2a47;
+  --text-muted: #6a6488;
+  --text-faint: #9a93b3;
+
+  --accent: #6c43d6;
+  --accent-soft: rgba(124, 92, 220, 0.35);
+  --accent-gradient: linear-gradient(120deg, #7b61ff, #40b8ff);
+  --accent-glow: 0 8px 22px rgba(123, 97, 255, 0.35);
+  --accent-glow-soft: 0 6px 18px rgba(123, 97, 255, 0.18);
+
+  --like-color: #e84976;
+  --like-glow: 0 0 16px rgba(232, 73, 118, 0.35);
+
+  --title-gradient: linear-gradient(120deg, #1c1830 10%, #6c43d6 55%, #2c8fbf 100%);
+  --thread-line: rgba(124, 92, 220, 0.22);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text-body);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100dvh;
+  background: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text-strong);
+}
+
+:focus {
+  outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.composer-slot {
+  margin-left: 16px;
+  animation: composer-slot-in 0.28s ease;
+}
+
+@keyframes composer-slot-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .composer-slot {
+    animation: none;
+  }
+}

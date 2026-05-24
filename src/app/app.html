@@ -1,0 +1,82 @@
+<div class="bg" aria-hidden="true">
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="blob blob-c"></div>
+</div>
+
+<div class="shell">
+  <header class="header">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="brand-gradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7B61FF" />
+            <stop offset="100%" stop-color="#40D5FF" />
+          </linearGradient>
+        </defs>
+        <rect width="64" height="64" rx="16" fill="url(#brand-gradient)" />
+        <path
+          d="M18 24h28M18 32h20M18 40h14"
+          stroke="#fff"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+      </svg>
+      <div class="brand-text">
+        <span class="kicker">Threads</span>
+        <h1 class="title">Angular Comments</h1>
+      </div>
+    </div>
+    <app-theme-toggle />
+  </header>
+
+  <main class="main">
+    <article class="article">
+      <span class="article-kicker">From the blog</span>
+      <h2 class="article-title">On being briefly here</h2>
+      <p class="article-byline">Andrei Khromushin · 1 min read</p>
+      <p class="article-excerpt">
+        The universe is older than imagination and almost entirely empty. Billions of stars,
+        billions of years, billions of accidents had to line up exactly right for any of us to wake
+        up on a Tuesday and complain about the weather. Somewhere out there, in another galaxy,
+        something is probably doing the same — and we'll almost certainly never meet. The strangest
+        thing about being briefly alive on a small blue planet isn't that it ends. It's that it ever
+        started at all. That seems like a reason to enjoy it.
+      </p>
+    </article>
+
+    <app-comments-section />
+  </main>
+
+  <footer class="foot">
+    <div class="foot-divider" aria-hidden="true"></div>
+
+    <div class="foot-card">
+      <p class="foot-desc">
+        Comments thread with tree and flat views, light and dark themes, and local persistence —
+        built with modern Angular and pure CSS.
+      </p>
+
+      <a
+        class="foot-cta"
+        href="https://github.com/andreikhromushin"
+        target="_blank"
+        rel="noopener"
+        aria-label="Andrei Khromushin on GitHub"
+      >
+        <span class="foot-cta-icon" aria-hidden="true">
+          <svg viewBox="0 0 16 16">
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            />
+          </svg>
+        </span>
+        <span class="foot-cta-text">
+          <span class="foot-cta-name">Andrei Khromushin</span>
+          <span class="foot-cta-handle">@andreikhromushin</span>
+        </span>
+        <span class="foot-cta-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </footer>
+</div>

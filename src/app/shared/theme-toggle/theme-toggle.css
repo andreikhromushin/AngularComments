@@ -1,0 +1,70 @@
+:host {
+  display: inline-flex;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border-strong);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-filter);
+  -webkit-backdrop-filter: var(--glass-filter);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--text-strong);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--glass-shadow);
+    border-color: var(--glass-border-strong);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.4, 1.6, 0.5, 1);
+}
+
+.moon {
+  fill: currentColor;
+  stroke: none;
+}
+
+.sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+
+.toggle.dark .sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+.toggle.dark .moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}

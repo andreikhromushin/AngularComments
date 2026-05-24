@@ -1,0 +1,35 @@
+<section class="section" aria-labelledby="comments-heading">
+  <header class="bar">
+    <h2 id="comments-heading" class="heading">
+      Discussion
+      <span class="count">{{ totalCount() }}</span>
+    </h2>
+    <app-view-toggle [mode]="mode()" (modeChange)="onModeChange($event)" />
+  </header>
+
+  <app-comment-composer (submitted)="onComposerSubmit($event)" />
+
+  @if (mode() === "tree") {
+    <ul class="threads" role="list">
+      @for (root of tree(); track root.id) {
+        <li>
+          <app-comment-thread
+            [node]="root"
+            [replyingTo]="replyingTo()"
+            (replyToggled)="onReplyToggle($event)"
+            (replied)="onReplied($event)"
+            (replyCancelled)="onReplyCancel()"
+          />
+        </li>
+      }
+    </ul>
+  } @else {
+    <app-comment-list
+      [comments]="flat()"
+      [replyingTo]="replyingTo()"
+      (replyToggled)="onReplyToggle($event)"
+      (replied)="onReplied($event)"
+      (replyCancelled)="onReplyCancel()"
+    />
+  }
+</section>

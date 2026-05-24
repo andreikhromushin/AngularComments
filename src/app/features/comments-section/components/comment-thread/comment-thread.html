@@ -1,0 +1,35 @@
+<div class="thread">
+  <app-comment-card
+    [comment]="node()"
+    [isReplying]="isReplying()"
+    (replyToggled)="replyToggled.emit($event)"
+  />
+
+  @if (isReplying()) {
+    <div class="composer-slot" [id]="composerId()">
+      <app-comment-composer
+        mode="reply"
+        [replyTo]="node().author"
+        [autoFocus]="true"
+        (submitted)="onReplySubmit($event)"
+        (cancelled)="replyCancelled.emit()"
+      />
+    </div>
+  }
+
+  @if (node().children.length) {
+    <ul class="children" role="list">
+      @for (child of node().children; track child.id) {
+        <li>
+          <app-comment-thread
+            [node]="child"
+            [replyingTo]="replyingTo()"
+            (replyToggled)="replyToggled.emit($event)"
+            (replied)="replied.emit($event)"
+            (replyCancelled)="replyCancelled.emit()"
+          />
+        </li>
+      }
+    </ul>
+  }
+</div>

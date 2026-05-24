@@ -1,0 +1,36 @@
+<form class="composer" [class.is-reply]="mode() === 'reply'" (submit)="onSubmit($event)">
+  @if (mode() === "reply") {
+    <header class="reply-header">
+      <span class="reply-to"
+        >Replying to <strong>{{ replyTo() ?? "Guest" }}</strong></span
+      >
+      <button type="button" class="cancel" (click)="onCancel()">Cancel</button>
+    </header>
+  }
+
+  <label class="sr-only" [attr.for]="fieldId()">{{ placeholder() }}</label>
+  <textarea
+    #area
+    [id]="fieldId()"
+    rows="3"
+    name="comment"
+    class="input"
+    [value]="text()"
+    (input)="text.set(area.value)"
+    (keydown)="onKeyDown($event)"
+    [placeholder]="placeholder()"
+  ></textarea>
+
+  <div class="actions">
+    <div class="meta">
+      <span class="hint">Posting as <strong class="guest">Guest</strong></span>
+      <kbd class="shortcut">⌘ ↵</kbd>
+    </div>
+    <button type="submit" class="post" [disabled]="!canSubmit()">
+      <span>{{ mode() === "reply" ? "Reply" : "Post" }}</span>
+      <svg viewBox="0 0 24 24" class="arrow" aria-hidden="true">
+        <path d="M5 12h14m-6-6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
+</form>

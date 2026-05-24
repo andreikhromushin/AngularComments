@@ -1,0 +1,162 @@
+:host {
+  display: block;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-filter);
+  -webkit-backdrop-filter: var(--glass-filter);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow: var(--glass-shadow);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    border-color: var(--glass-border-strong);
+    transform: translateY(-1px);
+  }
+
+  &.is-guest {
+    border-color: var(--accent-soft);
+    box-shadow: var(--accent-glow-soft);
+  }
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.author {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-strong);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+  color: #fff;
+}
+
+.time {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.text {
+  margin: 4px 0 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-body);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+  margin-left: -6px;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    background: var(--hover-bg);
+    color: var(--text-strong);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    transition: transform 0.2s ease;
+  }
+}
+
+.like:hover {
+  color: var(--like-color);
+}
+
+.like.liked {
+  color: var(--like-color);
+
+  svg {
+    fill: currentColor;
+    filter: drop-shadow(var(--like-glow));
+    animation: pop 0.42s ease;
+  }
+}
+
+.reply.active {
+  background: var(--hover-bg);
+  color: var(--accent);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
