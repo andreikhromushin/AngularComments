@@ -13,10 +13,13 @@ on [GitHub Pages](https://andreikhromushin.github.io/AngularComments/).
 - Comments, likes and theme persist to `localStorage`
 - Built with Angular 21 (zoneless, signals, standalone) and pure CSS, no UI library
 
-<div align="center">
-  <img width="800" height="400" src="./assets/preview-dark.png">
-</div>
-
-<div align="center">
-  <img width="800" height="400" src="./assets/preview-light.png">
-</div>
+<table>
+  <tr>
+    <td align="center"><sub>Dark</sub></td>
+    <td align="center"><sub>Light</sub></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/preview-dark.png" alt="Dark theme" width="420"></td>
+    <td><img src="./assets/preview-light.png" alt="Light theme" width="420"></td>
+  </tr>
+</table>
