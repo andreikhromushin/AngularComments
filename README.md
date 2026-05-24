@@ -1,7 +1,7 @@
 # Angular Comments
 
 Here is a comments thread with tree and flat views, light and dark themes, and local persistence. You can look and try this
-on [GitHub Pages](https://andreikhromushin.github.io/AngularComments/).
+on [GitHub Pages](https://andreikhromushin.github.io/AngularComments/)
 
 ## Features
 
